@@ -5,6 +5,7 @@ const app = express();
 let port = process.env.PORT || 3000
 app.set('port', port);
 
+app.use(express.static(__dirname + "/public"));
 
 // определяем обработчик для маршрута "/"
 app.get("/", function(request, response){
