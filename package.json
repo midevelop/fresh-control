@@ -1,0 +1,23 @@
+{
+  "name": "fresh-control",
+  "version": "1.0.0",
+  "description": "Проект для отслеживания срока годности товаров по заданным категориям",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/midevelop/fresh-control.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/midevelop/fresh-control/issues"
+  },
+  "homepage": "https://github.com/midevelop/fresh-control#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
