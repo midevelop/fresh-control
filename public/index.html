@@ -3,16 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title>Контроль Свежести</title>
+    <!-- версия для разработки, отображает полезные предупреждения в консоли -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <script defer src="index.js"></script>
 </head>
 <body>
-<div>
+<div id="app">
     <h1>Контроль Свежести</h1>
     <div>
         Разделы:
         <select name="" id="">
-            <option value="">Таблетки</option>
-            <option value="">Косметика</option>
+            <option value="" v-for="item in category">{{item}}</option>
+
         </select>
+        <button @click="fetchCategory">Обновить</button>
         <button>Добавить свой раздел</button>
     </div>
     <hr>
@@ -39,6 +45,14 @@
         <input type="text" placeholder="2 раза в день">
     </div>
     <button>Добавить своё</button>
+    <hr>
+    <div>
+        <h3>Употреби, пока не поздно</h3>
+        <ol>
+            <li>Парацетамол</li>
+            <li>Аспирин</li>
+        </ol>
+    </div>
 
 </div>
 
