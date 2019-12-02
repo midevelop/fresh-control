@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const categoryScheme = require('./model/category')
 
 const Category = mongoose.model("Category", categoryScheme)
-mongoose.connect("mongodb://localhost:27017/fresh-control", {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect(process.env.DB_URL, {useNewUrlParser: true, useUnifiedTopology: true});
 
 // создаем объект приложения
 const app = express();
