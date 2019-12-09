@@ -3,66 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <title>Контроль Свежести</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Jura|Marck+Script|Press+Start+2P&display=swap" rel="stylesheet">    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- версия для разработки, отображает полезные предупреждения в консоли -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
     <script defer src="index.js"></script>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
-<div id="app">
-    <h1>Контроль Свежести</h1>
-    <div>
+<div class="container" id="app">
+    <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+        <a class="navbar-brand" href="/">Контроль Свежести</a>
+    </nav>
+    <div class="pt-4">
         Разделы:
-        <select name="" id="">
+        <select class="custom-select" name="" id="">
             <option value="" v-for="item in category">{{item}}</option>
-            console.log("fdsafjlserj")
-            let app = new Vue({
-            el: "#app",
-            data: {
-            category: ["Продукты", "Одежда"]
-            },
-            methods: {
 
         </select>
-        <button @click="fetchCategory">Обновить</button>
-        <button>Добавить свой раздел</button>
+        <button class="btn btn-primary my-2" @click="fetchCategory">Обновить</button>
+        <button class="btn btn-outline-success my-2">Добавить свой раздел</button>
     </div>
     <hr>
-    <div>Название
-        <input type="text" placeholder="Название">
+    <div class="form-inline">Название
+        <input class="form-control ml-3" type="text" placeholder="Бананы">
     </div>
-    <div>Дата производства
-        <input type="date" placeholder="Название">
+    <div class="form-inline">Дата производства
+        <input class="form-control ml-3" type="date" placeholder="Название">
     </div>
-    <div>Срок годности, мес.
-        <input type="number" placeholder="4 мес">
+    <div class="form-inline">Срок годности, мес.
+        <input type="number" class="form-control ml-3" placeholder="4 мес">
     </div>
-    <button>Сохранить</button>
-    fetchCategory() {
-    axios.get('/category')
-    .then(response => this.category = response.data.category.map(item=>item.item))
-    }
-    }
-
-    <hr>
-    <div>Фото
-        <input type="file" placeholder="4 мес">
-        <img src="" alt="Фотография">
-    </div>
-    <div>Описание
-        <input type="text" placeholder="очень хороший препорат">
-    </div>
-    <div>Инструкция
-        <input type="text" placeholder="2 раза в день">
-    </div>
-    <button>Добавить своё</button>
+    <button class="btn btn-outline-primary mt-2">Сохранить</button>
     <hr>
     <div>
-        <h3>Употреби, пока не поздно</h3>
-        <ol>
-            <li>Парацетамол</li>
-            <li>Аспирин</li>
+        <h3>Пользовательская библиотека</h3>
+        <ol class="list-group">
+            <li class="list-group-item">Парацетамол</li>
+            <li class="list-group-item">Аспирин</li>
         </ol>
     </div>
 
