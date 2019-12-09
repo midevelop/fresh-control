@@ -8,7 +8,7 @@ const userScheme = new Schema({
 });
 
 // подключение
-mongoose.connect("mongodb://localhost:27017/fresh-control", { useNewUrlParser: true,  useUnifiedTopology: true  });
+mongoose.connect("mongodb+srv://usertest:usertest@cluster0-qzypq.mongodb.net/fresh-control?retryWrites=true&w=majority", { useNewUrlParser: true,  useUnifiedTopology: true  });
 
 const User = mongoose.model("User", userScheme);
 const Category = mongoose.model("Category", categoryScheme)
