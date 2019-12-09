@@ -2,6 +2,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const categoryScheme = require('./model/category')
+require('dotenv').config()
 
 const Category = mongoose.model("Category", categoryScheme)
 mongoose.connect(process.env.DB_URL, {useNewUrlParser: true, useUnifiedTopology: true});

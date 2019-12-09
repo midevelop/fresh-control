@@ -16,6 +16,13 @@
         Разделы:
         <select name="" id="">
             <option value="" v-for="item in category">{{item}}</option>
+            console.log("fdsafjlserj")
+            let app = new Vue({
+            el: "#app",
+            data: {
+            category: ["Продукты", "Одежда"]
+            },
+            methods: {
 
         </select>
         <button @click="fetchCategory">Обновить</button>
@@ -32,6 +39,11 @@
         <input type="number" placeholder="4 мес">
     </div>
     <button>Сохранить</button>
+    fetchCategory() {
+    axios.get('/category')
+    .then(response => this.category = response.data.category.map(item=>item.item))
+    }
+    }
 
     <hr>
     <div>Фото
@@ -58,3 +70,4 @@
 
 </body>
 </html>
+
